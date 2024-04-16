@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: #d895da;
+      }
+      .inner {
+        height: inherit;
+        border: 2px solid black;
+        padding: 10px;
+        background-color: #c4e4ff;
+        border-radius: 20px;
+      }
+      .subscribersbtn,
+      .subscribersNamebtn,
+      .subscribersIdbtn {
+        background-color: #d20062;
+        color: white;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+      .subscribersbtn:hover,
+      .subscribersNamebtn:hover,
+      .subscribersIdbtn:hover {
+        background-color: #780139;
+      }
+
+      .subscribersEndPoint,
+      .subscribersNamesEndPoint,
+      .subscribersIdEndPoint {
+        margin-top: 3rem;
+      }
+      .subscribersIdEndPoint {
+        margin-bottom: 2rem;
+      }
+      @media only screen and (max-width: 600px) {
+        .inner {
+          height: 90%;
+          width: 90%;
+          padding: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="inner">
+        <h1 style="text-align: center">Get Youtube Subscribers</h1>
+        <div class="subscribersEndPoint">
+          <p>
+            To hit get endpoint <b>"/subscribers"</b> click on below button.
+          </p>
+          <form method="get" action="/subscribers">
+            <button style="width: 100%" class="subscribersbtn">
+              /subscribers
+            </button>
+          </form>
+        </div>
+
+        <div class="subscribersNamesEndPoint">
+          <p>
+            To hit get endpoint <b>"/subscribers/names"</b> click on below
+            button.
+          </p>
+          <form method="get" action="/subscribers/names">
+            <button style="width: 100%" class="subscribersNamebtn">
+              /subscribers/names
+            </button>
+          </form>
+        </div>
+
+        <div class="subscribersIdEndPoint">
+          <p>
+            To hit get endpoint <b>"/subscribers/:id"</b> enter valid id below
+            and click on button.
+          </p>
+          <form id="idForm" method="get" action="/subscribers/:id">
+            <input
+              style="width: 97%; text-align: center"
+              id="idInput"
+              type="text"
+              placeholder="enter id"
+              required
+            />
+            <button
+              class="subscribersIdbtn"
+              type="submit"
+              style="width: 100%; margin-top: 10px"
+            >
+              /subscribers/:id
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("idForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting normally
+
+          // Get the value from the input field
+          var id = document.getElementById("idInput").value;
+
+          // Construct the URL with the id
+          var url = "/subscribers/" + id;
+
+          // Set the form action to the constructed URL
+          document.getElementById("idForm").action = url;
+
+          //empty input field
+          document.getElementById("idInput").value = "";
+
+          // Submit the form
+          this.submit();
+        });
+    </script>
+  </body>
+</html>
