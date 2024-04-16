@@ -4,8 +4,10 @@ const data = require("./data");
 
 // Connect to DATABASE
 // const DATABASE_URL = "mongodb://localhost/subscribers";
+// const DATABASE_URL =
+//   "mongodb+srv://anilyadavdatabase:anilyadav8068@cluster0.dcyqs5c.mongodb.net/subscribers"; //mongodb atlas url
 const DATABASE_URL =
-  "mongodb+srv://anilyadavdatabase:anilyadav8068@cluster0.dcyqs5c.mongodb.net/subscribers"; //mongodb atlas url
+  "mongodb+srv://anilyadavdatabase:anilyadav8068@cluster0.dcyqs5c.mongodb.net/subscribers";
 mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

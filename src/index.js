@@ -16,8 +16,11 @@ app.use("/", HomeRouter);
 app.set("views", path.join(__dirname, "views"));
 
 // Connect to DATABASE
+// const DATABASE_URL =
+//   "mongodb+srv://anilyadavdatabase:anilyadav8068@cluster0.dcyqs5c.mongodb.net/subscribers"; //
 const DATABASE_URL =
-  "mongodb+srv://anilyadavdatabase:anilyadav8068@cluster0.dcyqs5c.mongodb.net/subscribers"; //
+  "mongodb+srv://anilyadavdatabase:anilyadav8068@cluster0.dcyqs5c.mongodb.net/subscribers";
+
 mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
