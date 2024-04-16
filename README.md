@@ -14,7 +14,7 @@ Mongodb Atlas, Nodejs, Express, Ejs, Css, Js
 ## Screenshots
 
 ![Home](./ImageForReadme/Home.png)
-![Home](./ImageForReadme/Scribers.png)
-![Home](./ImageForReadme/ScribersNames.png)
-![Home](./ImageForReadme/ScribersId.png)
-![Home](./ImageForReadme/ScribersInvalid.png)
+![Scribers](./ImageForReadme/Scribers.png)
+![ScribersNames](./ImageForReadme/ScribersNames.png)
+![ScribersId](./ImageForReadme/ScribersId.png)
+![ScribersInvalid](./ImageForReadme/ScribersInvalid.png)
