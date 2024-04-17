@@ -1,7 +1,7 @@
 
 # Get Youtube Subscribers
 
-description: The Get Youtube Subscribers is a backend project  aimed at developing a simple application using MongoDB in Node.js. In this project I had used MongoDB Atlas , Mongoose , Nodejs , Expressjs , Ejs , Css, Javascript.
+Description: The Get Youtube Subscribers is a backend project  aimed at developing a simple application using MongoDB in Node.js. In this project I had used MongoDB Atlas , Mongoose , Nodejs , Expressjs , Ejs , Css, Javascript.
 
 For creating database I had used createDatabase.js file in src folder, for initializing data in database I had use data.js file in src folder . Server is created in index.js in src folder and all the endpoints are written in app.js in src folder . For creating home page I have used Ejs package. home.ejs exist in the views folder of src folder . in the home page I have used Css for styling and js for functionality . subscribers.js file in models folder in src folder is used to create schema for subscribers. 
 
