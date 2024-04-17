@@ -4,14 +4,15 @@ const mongoose = require("mongoose");
 const port = 3000;
 const subs = require("./models/subscribers.js");
 const subscriberRouter = require("./app.js");
-const HomeRouter = require("./homeRouter.js");
+// const HomeRouter = require("./homeRouter.js");
 const path = require("path");
 
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/subscribers", subscriberRouter);
-app.use("/", HomeRouter);
+app.use("/", subscriberRouter);
+// app.use("/subscribers", subscriberRouter);
+// app.use("/", HomeRouter);
 
 app.set("views", path.join(__dirname, "views"));
 

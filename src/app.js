@@ -3,18 +3,25 @@ const app = express();
 const router = express.Router();
 const subs = require("./models/subscribers.js");
 
-// /subscribers endpoint
+//home page
 router.get("/", async (req, res) => {
+  res.render("home.ejs");
+});
+
+// /subscribers endpoint
+router.get("/subscribers", async (req, res) => {
   try {
-    const AllSubscribers = await subs.find({});
-    res.send(AllSubscribers);
+    // const AllSubscribers = await subs.find({});
+    // res.json(AllSubscribers);
+    let subscribers = await subs.find(); // Retrieve all subscribers from the schema/model
+    res.status(200).json(subscribers); // Send the subscribers as a JSON response with a status of 200 (OK)
   } catch (error) {
-    res.status(400).send({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 });
 
 // /subscribers/names endpoint
-router.get("/names", async (req, res) => {
+router.get("/subscribers/names", async (req, res) => {
   //remove nothing here
   // Find all subscribers and project only the name and subscribedChannel fields
   try {
@@ -23,20 +30,20 @@ router.get("/names", async (req, res) => {
       { name: 1, subscribedChannel: 1, _id: 0 }
     );
 
-    res.send(subscribers);
+    res.json(subscribers);
   } catch (error) {
-    res.status(400).send({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 });
 
 // /subscribers/:id endpoint
-router.get("/:id", async (req, res) => {
+router.get("/subscribers/:id", async (req, res) => {
   try {
     let { id } = req.params;
     const SpecificSub = await subs.findById(id);
-    res.send(SpecificSub);
+    res.json(SpecificSub);
   } catch (error) {
-    res.status(400).send({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 });
 
